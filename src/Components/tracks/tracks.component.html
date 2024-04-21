@@ -1,0 +1,20 @@
+<form class="container">
+<select class="form-control form-select" name="courses" [(ngModel)]="selectValue">
+  <option value="OS">OS</option>
+  <option value="PD">PD</option>
+  <option value="SD">SD</option>
+</select>
+<p class="bg-dark text-light p-3 mt-2" *ngIf="selectValue">
+  <strong class="text-danger">{{ selectValue }}:</strong>
+  <br>
+  <ng-container *ngIf="selectValue === 'OS'">
+    OS in branch Smart & Mansoura
+  </ng-container>
+  <ng-container *ngIf="selectValue === 'PD'">
+    PD in branch Ismalia & Banha
+  </ng-container>
+  <ng-container *ngIf="selectValue === 'SD'">
+    SD in branch Smart & Asuite
+  </ng-container>
+</p>
+</form>

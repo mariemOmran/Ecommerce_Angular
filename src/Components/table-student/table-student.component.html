@@ -1,0 +1,36 @@
+<form class="container">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input [(ngModel)]="inputName" name="inAge" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Age</label>
+      <input [(ngModel)]="inputAge" name="inName"  type="number" class="form-control" id="exampleInputPassword1" placeholder="Age">
+      <small id="emailHelp" class="form-text text-muted">Age must more that 13 years old .</small>
+    </div>
+    
+    <button type="submit" (click)="addStudnet()" class="btn btn-primary">add student</button>
+    <button type="submit" (click)="saveChanges()" class="btn btn-primary">save</button>
+  </form>
+<table class="table container">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Edite</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let std of students">
+        <th scope="row">{{std.id}}</th>
+        <td>{{std.name}}</td>
+        <td>{{std.age}}</td>
+        <td><button (click)="edite(std.id)" class="btn btn-primary">Edite</button></td>
+        <td><button (click)="delete(std.id)" class="btn btn-danger">Delete</button></td>
+      </tr>
+     
+    </tbody>
+  </table>
